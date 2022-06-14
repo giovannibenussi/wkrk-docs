@@ -9,7 +9,7 @@ const config = {
   title: 'wkrk',
   tagline: 'A Simple, Yet Powerful Framework for Cloudflare Workers.',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: process.env.NODE_ENV ==='production' ? '/wkrk-docs' : '/',
+  baseUrl: process.env.NODE_ENV === 'production' ? '/wkrk-docs/' : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
