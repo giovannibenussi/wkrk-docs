@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwkrk_docs=self.webpackChunkwkrk_docs||[]).push([[3990],{9923:function(s){s.exports=JSON.parse('{"label":"docusaurus","permalink":"/wkrk-docs/blog/tags/docusaurus","allTagsPath":"/wkrk-docs/blog/tags","count":4}')}}]);

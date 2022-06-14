@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwkrk_docs=self.webpackChunkwkrk_docs||[]).push([[2341],{5938:function(s){s.exports=JSON.parse('{"label":"hola","permalink":"/wkrk-docs/blog/tags/hola","allTagsPath":"/wkrk-docs/blog/tags","count":1}')}}]);
