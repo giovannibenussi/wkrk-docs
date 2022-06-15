@@ -1,47 +1,80 @@
 ---
+title: Introduction
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+👩‍🚒 `wkrk` helps you to build websites using [Cloudflare Workers](https://developers.cloudflare.com/workers) faster.
 
-## Getting Started
+`wkrk` let's you focus on what's important: your content. Here's how:
+
+- ✍️ Concise, declarative API.
+- ⛱ Offers handy helpers like `res.redirect` and `res.status`.
+- 🔵 TypeScript first-class support.
+- ⚡️ No build tools required, just simple and concise abstractions.
+
+## Fast Track ⏱️
 
 Get started by **creating a new site**.
+To get started, call the wkrk function with your route defitions. Let's start with a route that responds to the /users path:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+```js
+// index.js
+import { wkrk } from "wkrk";
+import users from "./api/users";
 
-### What you'll need
+const routes = { "/users": users };
 
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+export default wkrk(routes);
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+Then define a handler for GET requests:
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+```js
+// api/users.js
+export default {
+  get(req, res) {
+    return res.status(200).json({ name: "Giovanni" });
+  }
+};
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+You can also define everything in a single file:
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+```js
+import { wkrk } from 'wkrk'
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+const routes = {
+  '/users': {
+    get(req, res) {
+      return res.status(200).json({ name: 'Giovanni' })
+    },
+  },
+}
+
+export default wkrk(routes)
+```
+
+## Handling HTTP Methods
+
+You can add the following functions to your routes:
+
+- `get`: Handles `GET` requests.
+- `post`: Handles `POST` requests.
+- `put`: Handles `PUT` requests.
+- `delete`: Handles `DELETE` requests.
+- `handler`: Handles all requests that aren't defined by any function above.
+
+You can combine handler with the other functions.  An example of this is shown below:
+
+```js
+export default {
+  get(req, res) {
+    return res.status(200).json({ name: "Giovanni" });
+  },
+  handler(req, res) {
+    return res.status(200).send('I match everything else.');
+  }
+};
+```
