@@ -19,8 +19,7 @@ sidebar_position: 1
 Get started by **creating a new site**.
 To get started, call the wkrk function with your route defitions. Let's start with a route that responds to the /users path:
 
-```js
-// index.js
+```js title='index.js'
 import { wkrk } from "wkrk";
 import users from "./api/users";
 
