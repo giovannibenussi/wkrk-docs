@@ -33,7 +33,7 @@ Then define a handler for GET requests:
 ```js
 // api/users.js
 export default {
-  get(req, res) {
+  get({ req, res }) {
     return res.status(200).json({ name: "Giovanni" });
   }
 };
@@ -46,7 +46,7 @@ import { wkrk } from 'wkrk'
 
 const routes = {
   '/users': {
-    get(req, res) {
+    get({ req, res }) {
       return res.status(200).json({ name: 'Giovanni' })
     },
   },
@@ -69,10 +69,10 @@ You can combine handler with the other functions.  An example of this is shown b
 
 ```js
 export default {
-  get(req, res) {
+  get({ req, res }) {
     return res.status(200).json({ name: "Giovanni" });
   },
-  handler(req, res) {
+  handler({ req, res }) {
     return res.status(200).send('I match everything else.');
   }
 };
