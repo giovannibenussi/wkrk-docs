@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwkrk_docs=self.webpackChunkwkrk_docs||[]).push([[243],{2789:function(s){s.exports=JSON.parse('{"permalink":"/wkrk-docs/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
